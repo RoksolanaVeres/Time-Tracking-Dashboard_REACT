@@ -31,7 +31,7 @@ Users should be able to:
 ### Screenshots
 
 ![](./screenshots/desktop_1.png)
-![](./screenshots/desktop_2.png)
+![](./screenshots/desktop_active.png)
 ![](./screenshots/mobile.png)
 
 ### Links
