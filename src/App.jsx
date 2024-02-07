@@ -1,5 +1,5 @@
 import { useState } from "react";
-import cardData from "../data.json";
+import cardData from "./data.json";
 import ProfileCard from "./components/ProfileCard";
 import ActivityCard from "./components/ActivityCard";
 import workIcon from "./assets/images/icon-work.svg";
@@ -9,14 +9,14 @@ import exerciseIcon from "./assets/images/icon-exercise.svg";
 import socialIcon from "./assets/images/icon-social.svg";
 import selfCareIcon from "./assets/images/icon-self-care.svg";
 
-const background = {
-  1: ["bg-lightRed", workIcon],
-  2: ["bg-softBlue", playIcon],
-  3: ["bg-coral", studyIcon],
-  4: ["bg-limeGreen", exerciseIcon],
-  5: ["bg-violet", socialIcon],
-  6: ["bg-softOrange", selfCareIcon],
-};
+const icons = [
+  workIcon,
+  playIcon,
+  studyIcon,
+  exerciseIcon,
+  socialIcon,
+  selfCareIcon,
+];
 
 export default function App() {
   const [period, setPeriod] = useState("weekly");
@@ -36,8 +36,8 @@ export default function App() {
             <ActivityCard
               key={card.id}
               title={card.title}
-              bgColor={background[card.id][0]}
-              icon={background[card.id][1]}
+              bgColor={card.bgColor}
+              icon={icons[card.id - 1]}
               currentTime={card.timeframes[period].current}
               prevTime={card.timeframes[period].previous}
               prevActivityPeriod={
