@@ -1,5 +1,5 @@
 import { useState } from "react";
-import cardData from "./data.json";
+import { cardsData } from "./data";
 import ProfileCard from "./components/ProfileCard";
 import ActivityCard from "./components/ActivityCard";
 import workIcon from "./assets/images/icon-work.svg";
@@ -31,7 +31,7 @@ export default function App() {
         className="grid w-full max-w-[1120px] gap-6 text-black sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         <ProfileCard setPeriod={setPeriod} period={period} />
-        {cardData.map((card) => {
+        {cardsData.map((card) => {
           return (
             <ActivityCard
               key={card.id}
